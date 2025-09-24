@@ -1,10 +1,25 @@
 import { Router } from "express";
+import validateRequest from "@/app/middlewares/req-validator";
+import { AuthControllers } from "./auth.controllers";
+import { AuthValidators } from "./auth.validators";
 
 const router = Router();
 
-router.post('/register', (req, res) => {
-  // Registration logic here
-  res.status(201).json({ message: 'User registered successfully' });
-});
+router.post(
+  "/register",
+  validateRequest(AuthValidators.registerSchema),
+  AuthControllers.register
+);
+router.post(
+  "/login",
+  validateRequest(AuthValidators.loginSchema),
+  AuthControllers.login
+);
+router.post(
+  "/refresh-token",
+  // validateRequest(AuthValidators.refreshTokenSchema), // ! we are getting refresh token from cookies, so no need to validate
+  AuthControllers.refreshToken
+);
+router.post("/logout", AuthControllers.logout);
 
 export default router;

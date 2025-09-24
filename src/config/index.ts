@@ -10,6 +10,8 @@ export default {
   MONGO_URI: process.env.MONGO_URI,
   JWT_SECRET: process.env.JWT_SECRET,
   JWT_EXPIRATION: process.env.JWT_EXPIRATION,
+  JWT_REFRESH_SECRET: process.env.JWT_REFRESH_SECRET,
+  JWT_REFRESH_EXPIRATION: process.env.JWT_REFRESH_EXPIRATION,
   SALT_ROUNDS: parseInt(process.env.SALT_ROUNDS || "10", 10),
   STRIPE_API_KEY: process.env.STRIPE_API_KEY,
   CLIENT_URL: process.env.CLIENT_URL,

@@ -4,8 +4,8 @@ import cors from "cors";
 import morgan from "morgan";
 import rateLimit from "express-rate-limit";
 import routes from "./app/routes";
-import { errorHandler } from "./app/middlewares/error-middleware";
-import { notFoundHandler } from "./app/middlewares/not-fount";
+import { errorHandler } from "./app/middlewares/error.middleware";
+import { notFoundHandler } from "./app/middlewares/not-found";
 
 export const app = express();
 

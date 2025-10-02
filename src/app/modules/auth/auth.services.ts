@@ -1,10 +1,10 @@
 import { User } from "../user/user.model";
-import bcrypt from "bcrypt";
 import { Secret } from "jsonwebtoken";
 import APIError from "@/error/APIError";
 import httpStatus from "http-status";
 import { jwtHelpers } from "@/helpers/jwt-helper";
 import config from "@/config";
+import argon2 from "argon2";
 
 const register = async (registerData: any) => {
   const { username, email, password } = registerData;
@@ -18,7 +18,7 @@ const register = async (registerData: any) => {
   }
 
   // Hash password
-  const hashedPassword = await bcrypt.hash(password, 10);
+  const hashedPassword = await argon2.hash(password);
 
   // Create account
   const newUser = await User.create({
@@ -42,7 +42,7 @@ const login = async (loginData: any) => {
   }
 
   // Verify password
-  const isMatch = await bcrypt.compare(password, user.password);
+  const isMatch = await argon2.verify(user.password, password);
   if (!isMatch)
     throw new APIError("Invalid credentials", httpStatus.UNAUTHORIZED);
 
@@ -85,6 +85,7 @@ const refreshToken = async (token: string) => {
 };
 
 const logout = async (token: string) => {
+  // Invalidate the token (implementation depends on how you manage tokens)
   return { message: "Logged out successfully" };
 };
 

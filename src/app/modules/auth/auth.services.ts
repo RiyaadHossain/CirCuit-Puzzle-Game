@@ -61,7 +61,7 @@ const login = async (loginData: any) => {
   return { user, accessToken, refreshToken };
 };
 
-const refreshToken = async (token: string) => {
+const getRefreshToken = async (token: string) => {
   let payload;
   try {
     payload = jwtHelpers.verifyToken(
@@ -92,6 +92,6 @@ const logout = async (token: string) => {
 export const AuthService = {
   register,
   login,
-  refreshToken,
+  getRefreshToken,
   logout,
 };

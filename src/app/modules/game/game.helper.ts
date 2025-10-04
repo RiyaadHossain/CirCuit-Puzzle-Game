@@ -33,7 +33,7 @@ export async function validateCircuitHelper(
   universalElectricalChecks(submission, graph, errors);
 
   // Step 4: Puzzle-specific dynamic rules
-  puzzleSpecificRules(submission, puzzle, errors); // Todo: fix mustHaveSeries validation logic properly
+  puzzleSpecificRules(submission, puzzle, errors)
 
   return {
     valid: errors.length === 0,

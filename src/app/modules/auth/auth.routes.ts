@@ -18,8 +18,8 @@ router.post(
 );
 router.post(
   "/refresh-token",
-  // validateRequest(AuthValidators.refreshTokenSchema), // ! cookie not getting from request, need to fix
-  AuthControllers.refreshToken
+  validateRequest(AuthValidators.refreshTokenSchema),
+  AuthControllers.getRefreshToken
 );
 router.post("/logout", auth(), AuthControllers.logout);
 

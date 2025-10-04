@@ -35,11 +35,9 @@ const login = catchAsync(async (req, res) => {
   });
 });
 
-const refreshToken = catchAsync(async (req, res) => {
-  console.log("Cookies", req.cookies) // ! for debugging
-
-  const accessToken = req.headers.cookie?.split("=")[1] as string
-  const result = await AuthService.refreshToken(accessToken);
+const getRefreshToken = catchAsync(async (req, res) => {
+  const refreshToken = req.cookies.refreshToken as string
+  const result = await AuthService.getRefreshToken(refreshToken);
 
   // Set Cookie
   const cookieOptions = {
@@ -47,7 +45,7 @@ const refreshToken = catchAsync(async (req, res) => {
     httpOnly: true,
   };
 
-  res.cookie("refreshToken", accessToken, cookieOptions);
+  res.cookie("refreshToken", refreshToken, cookieOptions);
 
   sendResponse(res, {
     success: true,
@@ -57,11 +55,11 @@ const refreshToken = catchAsync(async (req, res) => {
   });
 });
 
-const logout = catchAsync(async (_req, res) => {});
+const logout = catchAsync(async (_req, _res) => {});
 
 export const AuthControllers = {
   register,
   login,
-  refreshToken,
+  getRefreshToken,
   logout,
 };

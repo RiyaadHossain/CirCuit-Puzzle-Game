@@ -6,6 +6,7 @@ import rateLimit from "express-rate-limit";
 import routes from "./app/routes";
 import { errorHandler } from "./app/middlewares/error.middleware";
 import { notFoundHandler } from "./app/middlewares/not-found";
+import cookieParser from 'cookie-parser';
 
 export const app = express();
 
@@ -13,6 +14,7 @@ export const app = express();
 app.use(helmet());
 app.use(cors({ origin: "*" })); // 🔒 Restrict in production
 app.use(express.json());
+app.use(cookieParser());
 app.use(morgan("dev"));
 app.use(rateLimit({ windowMs: 60 * 1000, max: 100 }));
 

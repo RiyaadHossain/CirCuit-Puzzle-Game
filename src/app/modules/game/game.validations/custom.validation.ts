@@ -16,28 +16,6 @@ export function puzzleSpecificRules(
     if (!validRes)
       errors.push(`Resistor must be ${puzzle.rules.resistorValue}Ω`);
   }
-
-  if (puzzle.rules?.mustHaveSeries?.length) {
-    for (let seq of puzzle.rules.mustHaveSeries) {
-      let sequenceFound = seq.every((type: any) =>
-        submission.components.find((c) => c.type === type)
-      );
-      if (!sequenceFound)
-        errors.push(`Series sequence not satisfied: ${seq.join(" → ")}`);
-    }
-  }
-
-  if (puzzle?.rules?.mustHaveParallel?.length) {
-    for (let parallelGroup of puzzle.rules.mustHaveParallel) {
-      const anodes = submission.connections.filter((c) =>
-        parallelGroup.some((t: any) => c.to.includes(t))
-      );
-      if (anodes.length < parallelGroup.length)
-        errors.push(
-          `Parallel requirement not satisfied: ${parallelGroup.join(" || ")}`
-        );
-    }
-  }
 }
 
 

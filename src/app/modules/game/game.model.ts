@@ -33,12 +33,6 @@ export const Component = model<IComponent>("Component", componentSchema);
 export interface IRulesDocument extends Omit<IRules, "_id">, Document {}
 const rulesSchema = new Schema<IRulesDocument>(
   {
-    mustHaveSeries: [
-      [String], // array of components that must appear in series order | e.g. ["battery", "resistor", "led"]
-    ],
-    mustHaveParallel: [
-      [String], // array of components that must be parallel | e.g. ["led1", "led2"]
-    ],
     resistorValue: { type: Number }, // e.g. must be 220 ohm
     maxComponents: { type: Number, default: 8 },
   },

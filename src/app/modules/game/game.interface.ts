@@ -14,8 +14,6 @@ export interface IComponent {
 }
 
 export interface IRules {
-  mustHaveSeries?: string[][];
-  mustHaveParallel?: string[][];
   resistorValue?: number;
   maxComponents?: number;
 }

@@ -29,6 +29,11 @@ const submitPuzzle = async (
   const rawData = fs.readFileSync(resolvedPath, "utf-8");
   const submission = JSON.parse(rawData);
 
+  // Detete Json file after reading
+  fs.unlink(resolvedPath, (err) => {
+    if (err) console.error("Error deleting file:", err);
+  });
+
   // Fetch the puzzle details
   const puzzle = await Puzzle.findOne({ puzzleId })
     .populate("rules")

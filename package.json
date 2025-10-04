@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "tsx watch -r tsconfig-paths/register src/server.ts",
     "build": "tsc && tsc-alias",
-    "start": "node dist/server.js",
+    "start": "tsc && tsc-alis && node dist/server.js",
     "lint": "eslint 'src/**/*.{ts,js}'",
     "test": "jest"
   },
@@ -32,7 +32,6 @@
   "dependencies": {
     "@google/genai": "^1.22.0",
     "argon2": "^0.44.0",
-    "axios": "^1.12.2",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "dotenv": "^17.2.2",
@@ -46,7 +45,6 @@
     "mongoose": "^8.18.2",
     "morgan": "^1.10.1",
     "multer": "^2.0.2",
-    "ollama": "^0.6.0",
     "tsx": "^4.20.5",
     "zod": "^4.1.11"
   },

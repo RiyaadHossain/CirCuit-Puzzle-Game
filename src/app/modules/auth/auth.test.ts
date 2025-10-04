@@ -3,6 +3,9 @@ import mongoose from "mongoose";
 import { app } from "@/app";
 import config from "@/config";
 
+let accessToken: string;
+let refreshToken: string;
+
 beforeAll(async () => {
   await mongoose.connect(config.MONGO_URI as string);
 });
@@ -36,6 +39,9 @@ describe("Auth Endpoints", () => {
     expect(res.body.success).toBe(true);
     expect(res.body.data).toHaveProperty("accessToken");
     expect(res.body.data).toHaveProperty("refreshToken");
+
+    accessToken = res.body.data.accessToken;
+    refreshToken = res.body.data.refreshToken;
   });
 
   it("should fail login with wrong password", async () => {
@@ -45,6 +51,23 @@ describe("Auth Endpoints", () => {
     });
 
     expect(res.statusCode).toBe(401);
+    expect(res.body.success).toBe(false);
+  });
+
+  it("should refresh JWT access token", async () => {
+    const res = await request(app)
+      .post("/api/v1/auth/refresh-token")
+      .set("Cookie", [`refreshToken=${refreshToken}`]);
+
+    expect(res.statusCode).toBe(200);
+    expect(res.body.success).toBe(true);
+    expect(res.body.data).toHaveProperty("accessToken");
+  });
+
+  it("should fail refresh token without cookie", async () => {
+    const res = await request(app).post("/api/v1/auth/refresh-token");
+
+    expect(res.statusCode).toBe(500); 
     expect(res.body.success).toBe(false);
   });
 });

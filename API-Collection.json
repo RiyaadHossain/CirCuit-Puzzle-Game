@@ -1,0 +1,1279 @@
+{
+	"info": {
+		"_postman_id": "a4bce6bc-1be9-4831-a1a6-d3bff1fa961d",
+		"name": "Circuit Puzzle Game",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20922615",
+		"_collection_link": "https://bold-comet-253939.postman.co/workspace/My-Workspace~df3243c3-2192-40fa-8316-e10c1eb53c65/collection/20922615-a4bce6bc-1be9-4831-a1a6-d3bff1fa961d?action=share&source=collection_link&creator=20922615"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"rockie03\",\r\n    \"email\": \"rockie2@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/auth/register",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"rockie06\",\r\n    \"email\": \"rockie3@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/auth/register",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "96"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 Oct 2025 15:44:24 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1759593517"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "406"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"196-nawI2lo33IjGOdw4H1+H/rZcktE\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 201,\n    \"success\": true,\n    \"message\": \"User registered successfully\",\n    \"meta\": null,\n    \"data\": {\n        \"username\": \"rockie06\",\n        \"email\": \"rockie3@gmail.com\",\n        \"password\": \"$argon2id$v=19$m=65536,t=3,p=4$4wRtCjNRoT+z5pBPqeRC/Q$KhXUWYDVTi6+dN75EdZU/8qhtTuNuvrPtTL3mGzl1bg\",\n        \"solvedPuzzles\": 0,\n        \"attempts\": 0,\n        \"_id\": \"68e140d884189c2bc3541f6d\",\n        \"createdAt\": \"2025-10-04T15:44:24.758Z\",\n        \"updatedAt\": \"2025-10-04T15:44:24.758Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "LogIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"rockie03\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/auth/login",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "LogIn",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"rockie03\",\r\n    \"password\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/auth/login",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "95"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 Oct 2025 15:44:32 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1759593517"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGUwZTNkMjFhZmQ1MDVlNWNlMmNhOTkiLCJpYXQiOjE3NTk1OTI2NzIsImV4cCI6MTc2MjE4NDY3Mn0.XQBHNioPaHJ0VRHSBOMS8hjlSy_wMxOPIhWaocLDKAU; Path=/; HttpOnly"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "802"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"322-HQHIuQphQuIe8p82q742dIZaNDM\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"User logged in successfully\",\n    \"meta\": null,\n    \"data\": {\n        \"user\": {\n            \"_id\": \"68e0e3d21afd505e5ce2ca99\",\n            \"username\": \"rockie03\",\n            \"email\": \"rockie2@gmail.com\",\n            \"password\": \"$argon2id$v=19$m=65536,t=3,p=4$fMCzi+uXY0l6ej5+t0yCXA$p4rNqTb37blfo2cAyyasU86Fv/7/hR/bc6w8wJfijLM\",\n            \"solvedPuzzles\": 4,\n            \"attempts\": 19,\n            \"createdAt\": \"2025-10-04T09:07:30.536Z\",\n            \"updatedAt\": \"2025-10-04T11:34:41.617Z\",\n            \"__v\": 0\n        },\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGUwZTNkMjFhZmQ1MDVlNWNlMmNhOTkiLCJpYXQiOjE3NTk1OTI2NzIsImV4cCI6MTc1OTc2NTQ3Mn0.IxEbJ18YnMQ6QNQXe0w2ffoMXCIof_F2NgzV5N3HHxY\",\n        \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGUwZTNkMjFhZmQ1MDVlNWNlMmNhOTkiLCJpYXQiOjE3NTk1OTI2NzIsImV4cCI6MTc2MjE4NDY3Mn0.XQBHNioPaHJ0VRHSBOMS8hjlSy_wMxOPIhWaocLDKAU\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Refresh Token",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/auth/refresh-token",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"auth",
+								"refresh-token"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Refresh Token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/auth/refresh-token",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"auth",
+										"refresh-token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "94"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 Oct 2025 15:44:40 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1759593517"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGUwZTNkMjFhZmQ1MDVlNWNlMmNhOTkiLCJpYXQiOjE3NTk1OTI2NzIsImV4cCI6MTc2MjE4NDY3Mn0.XQBHNioPaHJ0VRHSBOMS8hjlSy_wMxOPIhWaocLDKAU; Path=/; HttpOnly"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "287"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"11f-uJonW9GArXGLLMYV1hZUM5y88OI\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"User logged in successfully\",\n    \"meta\": null,\n    \"data\": {\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGUwZTNkMjFhZmQ1MDVlNWNlMmNhOTkiLCJpYXQiOjE3NTk1OTI2ODAsImV4cCI6MTc1OTc2NTQ4MH0.G3Q1XMGWVVr390Nfx8lHHz87Xn7uiaTVCTRBGZcnocA\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Game",
+			"item": [
+				{
+					"name": "Get All Puzzles",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/circuit/puzzles",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"circuit",
+								"puzzles"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Puzzles",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/circuit/puzzles",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"circuit",
+										"puzzles"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "93"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 Oct 2025 15:44:49 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1759593517"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "7850"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1eaa-unQDiu//yTRg0hIXqdbD3Do+ptM\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Puzzles retrieved successfully\",\n    \"meta\": null,\n    \"data\": [\n        {\n            \"_id\": \"68e0e349eba5b7dee3f7d5c6\",\n            \"puzzleId\": \"puzzle-004\",\n            \"title\": \"LED Parallel Circuit\",\n            \"description\": \"Light two LEDs in parallel, each with its own resistor, using a single battery.\",\n            \"components\": [\n                {\n                    \"_id\": \"68e0e348eba5b7dee3f7d5ad\",\n                    \"id\": \"battery1\",\n                    \"type\": \"battery\",\n                    \"minCount\": 1,\n                    \"maxCount\": 1,\n                    \"properties\": {\n                        \"voltage\": 5,\n                        \"terminal1\": \"positive\",\n                        \"terminal2\": \"negative\"\n                    },\n                    \"createdAt\": \"2025-10-04T09:05:12.922Z\",\n                    \"updatedAt\": \"2025-10-04T09:05:12.922Z\",\n                    \"__v\": 0\n                },\n                {\n                    \"_id\": \"68e0e348eba5b7dee3f7d5af\",\n                    \"id\": \"led1\",\n                    \"type\": \"led\",\n                    \"minCount\": 1,\n                    \"maxCount\": 1,\n                    \"properties\": {\n                        \"forwardVoltage\": 2,\n                        \"terminal1\": \"anode\",\n                        \"terminal2\": \"cathode\"\n                    },\n                    \"createdAt\": \"2025-10-04T09:05:12.946Z\",\n                    \"updatedAt\": \"2025-10-04T09:05:12.946Z\",\n                    \"__v\": 0\n                },\n                {\n                    \"_id\": \"68e0e348eba5b7dee3f7d5b1\",\n                    \"id\": \"led2\",\n                    \"type\": \"led\",\n                    \"minCount\": 1,\n                    \"maxCount\": 1,\n                    \"properties\": {\n                        \"forwardVoltage\": 2,\n                        \"terminal1\": \"anode\",\n                        \"terminal2\": \"cathode\"\n                    },\n                    \"createdAt\": \"2025-10-04T09:05:12.965Z\",\n                    \"updatedAt\": \"2025-10-04T09:05:12.965Z\",\n                    \"__v\": 0\n                },\n                {\n                    \"_id\": \"68e0e348eba5b7dee3f7d5b3\",\n                    \"id\": \"resistor1\",\n                    \"type\": \"resistor\",\n                    \"minCount\": 1,\n                    \"maxCount\": 1,\n                    \"properties\": {\n                        \"ohm\": 220,\n                        \"terminal1\": \"in\",\n                        \"terminal2\": \"out\"\n                    },\n                    \"createdAt\": \"2025-10-04T09:05:12.972Z\",\n                    \"updatedAt\": \"2025-10-04T09:05:12.972Z\",\n                    \"__v\": 0\n                },\n                {\n                    \"_id\": \"68e0e348eba5b7dee3f7d5b5\",\n                    \"id\": \"resistor2\",\n                    \"type\": \"resistor\",\n                    \"minCount\": 1,\n                    \"maxCount\": 1,\n                    \"properties\": {\n                        \"ohm\": 220,\n                        \"terminal1\": \"in\",\n                        \"terminal2\": \"out\"\n                    },\n                    \"createdAt\": \"2025-10-04T09:05:12.999Z\",\n                    \"updatedAt\": \"2025-10-04T09:05:12.999Z\",\n                    \"__v\": 0\n                },\n                {\n                    \"_id\": \"68e0e349eba5b7dee3f7d5b7\",\n                    \"id\": \"ground1\",\n                    \"type\": \"ground\",\n                    \"minCount\": 1,\n                    \"maxCount\": 1,\n                    \"properties\": {\n                        \"terminal1\": \"gnd\"\n                    },\n                    \"createdAt\": \"2025-10-04T09:05:13.016Z\",\n                    \"updatedAt\": \"2025-10-04T09:05:13.016Z\",\n                    \"__v\": 0\n                }\n            ],\n            \"difficulty\": \"hard\",\n            \"rules\": {\n                \"_id\": \"68e0e349eba5b7dee3f7d5c1\",\n                \"resistorValue\": 220,\n                \"maxComponents\": 8,\n                \"createdAt\": \"2025-10-04T09:05:13.363Z\",\n                \"updatedAt\": \"2025-10-04T09:05:13.363Z\",\n                \"__v\": 0\n            },\n            \"hints\": [\n                \"Both LEDs should be lit in parallel.\",\n                \"Each LED must have a resistor.\",\n                \"Avoid short circuits.\"\n            ],\n            \"userGuide\": [\n                \"Connect battery positive to both resistors.\",\n                \"Each resistor connects to an LED anode.\",\n                \"LED cathodes connect to ground.\"\n            ],\n            \"createdAt\": \"2025-10-04T09:05:13.500Z\",\n            \"updatedAt\": \"2025-10-04T09:05:13.500Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"68e0e349eba5b7dee3f7d5cc\",\n            \"puzzleId\": \"puzzle-001\",\n            \"title\": \"Light an LED with a Resistor\",\n            \"description\": \"Build a circuit to light an LED using a battery and a resistor. The resistor must be in series with the LED.\",\n            \"components\": [\n                {\n                    \"_id\": \"68e0e348eba5b7dee3f7d595\",\n                    \"id\": \"battery1\",\n                    \"type\": \"battery\",\n                    \"minCount\": 1,\n                    \"maxCount\": 1,\n                    \"properties\": {\n                        \"voltage\": 5,\n                        \"terminal1\": \"positive\",\n                        \"terminal2\": \"negative\"\n                    },\n                    \"createdAt\": \"2025-10-04T09:05:12.510Z\",\n                    \"updatedAt\": \"2025-10-04T09:05:12.510Z\",\n                    \"__v\": 0\n                },\n                {\n                    \"_id\": \"68e0e348eba5b7dee3f7d5a5\",\n                    \"id\": \"led1\",\n                    \"type\": \"led\",\n                    \"minCount\": 1,\n                    \"maxCount\": 1,\n                    \"properties\": {\n                        \"forwardVoltage\": 2,\n                        \"terminal1\": \"anode\",\n                        \"terminal2\": \"cathode\"\n                    },\n                    \"createdAt\": \"2025-10-04T09:05:12.863Z\",\n                    \"updatedAt\": \"2025-10-04T09:05:12.863Z\",\n                    \"__v\": 0\n                },\n                {\n                    \"_id\": \"68e0e348eba5b7dee3f7d5a7\",\n                    \"id\": \"resistor1\",\n                    \"type\": \"resistor\",\n                    \"minCount\": 1,\n                    \"maxCount\": 1,\n                    \"properties\": {\n                        \"ohm\": 220,\n                        \"terminal1\": \"in\",\n                        \"terminal2\": \"out\"\n                    },\n                    \"createdAt\": \"2025-10-04T09:05:12.869Z\",\n                    \"updatedAt\": \"2025-10-04T09:05:12.869Z\",\n                    \"__v\": 0\n                },\n                {\n                    \"_id\": \"68e0e348eba5b7dee3f7d597\",\n                    \"id\": \"ground1\",\n                    \"type\": \"ground\",\n                    \"minCount\": 1,\n                    \"maxCount\": 1,\n                    \"properties\": {\n                        \"terminal1\": \"gnd\"\n                    },\n                    \"createdAt\": \"2025-10-04T09:05:12.543Z\",\n                    \"updatedAt\": \"2025-10-04T09:05:12.543Z\",\n                    \"__v\": 0\n                }\n            ],\n            \"difficulty\": \"easy\",\n            \"rules\": {\n                \"_id\": \"68e0e349eba5b7dee3f7d5c8\",\n                \"resistorValue\": 220,\n                \"maxComponents\": 5,\n                \"createdAt\": \"2025-10-04T09:05:13.523Z\",\n                \"updatedAt\": \"2025-10-04T09:05:13.523Z\",\n                \"__v\": 0\n            },\n            \"hints\": [\n                \"Ensure the resistor is in series with the LED.\",\n                \"Check the polarity of the LED.\",\n                \"Avoid direct connection from battery positive to ground.\"\n            ],\n            \"userGuide\": [\n                \"Connect battery positive to resistor, then to LED anode.\",\n                \"Connect LED cathode to ground.\"\n            ],\n            \"createdAt\": \"2025-10-04T09:05:13.575Z\",\n            \"updatedAt\": \"2025-10-04T09:05:13.575Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"68e0e349eba5b7dee3f7d5ce\",\n            \"puzzleId\": \"puzzle-002\",\n            \"title\": \"Dual LED Challenge\",\n            \"description\": \"Light two LEDs using a single battery. Each LED must have its own resistor.\",\n            \"components\": [\n                {\n                    \"_id\": \"68e0e348eba5b7dee3f7d599\",\n                    \"id\": \"battery1\",\n                    \"type\": \"battery\",\n                    \"minCount\": 1,\n                    \"maxCount\": 1,\n                    \"properties\": {\n                        \"voltage\": 5,\n                        \"terminal1\": \"positive\",\n                        \"terminal2\": \"negative\"\n                    },\n                    \"createdAt\": \"2025-10-04T09:05:12.594Z\",\n                    \"updatedAt\": \"2025-10-04T09:05:12.594Z\",\n                    \"__v\": 0\n                },\n                {\n                    \"_id\": \"68e0e348eba5b7dee3f7d59b\",\n                    \"id\": \"led1\",\n                    \"type\": \"led\",\n                    \"minCount\": 1,\n                    \"maxCount\": 1,\n                    \"properties\": {\n                        \"forwardVoltage\": 2,\n                        \"terminal1\": \"anode\",\n                        \"terminal2\": \"cathode\"\n                    },\n                    \"createdAt\": \"2025-10-04T09:05:12.644Z\",\n                    \"updatedAt\": \"2025-10-04T09:05:12.644Z\",\n                    \"__v\": 0\n                },\n                {\n                    \"_id\": \"68e0e348eba5b7dee3f7d59d\",\n                    \"id\": \"led2\",\n                    \"type\": \"led\",\n                    \"minCount\": 1,\n                    \"maxCount\": 1,\n                    \"properties\": {\n                        \"forwardVoltage\": 2,\n                        \"terminal1\": \"anode\",\n                        \"terminal2\": \"cathode\"\n                    },\n                    \"createdAt\": \"2025-10-04T09:05:12.695Z\",\n                    \"updatedAt\": \"2025-10-04T09:05:12.695Z\",\n                    \"__v\": 0\n                },\n                {\n                    \"_id\": \"68e0e348eba5b7dee3f7d59f\",\n                    \"id\": \"resistor1\",\n                    \"type\": \"resistor\",\n                    \"minCount\": 1,\n                    \"maxCount\": 1,\n                    \"properties\": {\n                        \"ohm\": 220,\n                        \"terminal1\": \"in\",\n                        \"terminal2\": \"out\"\n                    },\n                    \"createdAt\": \"2025-10-04T09:05:12.745Z\",\n                    \"updatedAt\": \"2025-10-04T09:05:12.745Z\",\n                    \"__v\": 0\n                },\n                {\n                    \"_id\": \"68e0e348eba5b7dee3f7d5a1\",\n                    \"id\": \"resistor2\",\n                    \"type\": \"resistor\",\n                    \"minCount\": 1,\n                    \"maxCount\": 1,\n                    \"properties\": {\n                        \"ohm\": 220,\n                        \"terminal1\": \"in\",\n                        \"terminal2\": \"out\"\n                    },\n                    \"createdAt\": \"2025-10-04T09:05:12.795Z\",\n                    \"updatedAt\": \"2025-10-04T09:05:12.795Z\",\n                    \"__v\": 0\n                },\n                {\n                    \"_id\": \"68e0e348eba5b7dee3f7d5a3\",\n                    \"id\": \"ground1\",\n                    \"type\": \"ground\",\n                    \"minCount\": 1,\n                    \"maxCount\": 1,\n                    \"properties\": {\n                        \"terminal1\": \"gnd\"\n                    },\n                    \"createdAt\": \"2025-10-04T09:05:12.846Z\",\n                    \"updatedAt\": \"2025-10-04T09:05:12.846Z\",\n                    \"__v\": 0\n                }\n            ],\n            \"difficulty\": \"medium\",\n            \"rules\": {\n                \"_id\": \"68e0e349eba5b7dee3f7d5ca\",\n                \"resistorValue\": 220,\n                \"maxComponents\": 8,\n                \"createdAt\": \"2025-10-04T09:05:13.526Z\",\n                \"updatedAt\": \"2025-10-04T09:05:13.526Z\",\n                \"__v\": 0\n            },\n            \"hints\": [\n                \"Each LED should have its own resistor.\",\n                \"Connect both LEDs in parallel.\",\n                \"Avoid short circuits.\"\n            ],\n            \"userGuide\": [\n                \"Connect battery positive to both resistors.\",\n                \"Each resistor connects to an LED anode.\",\n                \"LED cathodes connect to ground.\"\n            ],\n            \"createdAt\": \"2025-10-04T09:05:13.578Z\",\n            \"updatedAt\": \"2025-10-04T09:05:13.578Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"68e0e349eba5b7dee3f7d5d0\",\n            \"puzzleId\": \"puzzle-003\",\n            \"title\": \"LED with Variable Resistor\",\n            \"description\": \"Light an LED using a battery and a variable resistor. The resistor value must be between 100 and 1k ohm.\",\n            \"components\": [\n                {\n                    \"_id\": \"68e0e349eba5b7dee3f7d5bd\",\n                    \"id\": \"battery1\",\n                    \"type\": \"battery\",\n                    \"minCount\": 1,\n                    \"maxCount\": 1,\n                    \"properties\": {\n                        \"voltage\": 5,\n                        \"terminal1\": \"positive\",\n                        \"terminal2\": \"negative\"\n                    },\n                    \"createdAt\": \"2025-10-04T09:05:13.191Z\",\n                    \"updatedAt\": \"2025-10-04T09:05:13.191Z\",\n                    \"__v\": 0\n                },\n                {\n                    \"_id\": \"68e0e349eba5b7dee3f7d5bf\",\n                    \"id\": \"led1\",\n                    \"type\": \"led\",\n                    \"minCount\": 1,\n                    \"maxCount\": 1,\n                    \"properties\": {\n                        \"forwardVoltage\": 2,\n                        \"terminal1\": \"anode\",\n                        \"terminal2\": \"cathode\"\n                    },\n                    \"createdAt\": \"2025-10-04T09:05:13.195Z\",\n                    \"updatedAt\": \"2025-10-04T09:05:13.195Z\",\n                    \"__v\": 0\n                },\n                {\n                    \"_id\": \"68e0e348eba5b7dee3f7d5a9\",\n                    \"id\": \"resistor1\",\n                    \"type\": \"resistor\",\n                    \"minCount\": 1,\n                    \"maxCount\": 1,\n                    \"properties\": {\n                        \"ohm\": 500,\n                        \"terminal1\": \"in\",\n                        \"terminal2\": \"out\"\n                    },\n                    \"createdAt\": \"2025-10-04T09:05:12.895Z\",\n                    \"updatedAt\": \"2025-10-04T09:05:12.895Z\",\n                    \"__v\": 0\n                },\n                {\n                    \"_id\": \"68e0e348eba5b7dee3f7d5ab\",\n                    \"id\": \"ground1\",\n                    \"type\": \"ground\",\n                    \"minCount\": 1,\n                    \"maxCount\": 1,\n                    \"properties\": {\n                        \"terminal1\": \"gnd\"\n                    },\n                    \"createdAt\": \"2025-10-04T09:05:12.916Z\",\n                    \"updatedAt\": \"2025-10-04T09:05:12.916Z\",\n                    \"__v\": 0\n                }\n            ],\n            \"difficulty\": \"medium\",\n            \"rules\": {\n                \"_id\": \"68e0e349eba5b7dee3f7d5c4\",\n                \"resistorValue\": 500,\n                \"maxComponents\": 6,\n                \"createdAt\": \"2025-10-04T09:05:13.468Z\",\n                \"updatedAt\": \"2025-10-04T09:05:13.468Z\",\n                \"__v\": 0\n            },\n            \"hints\": [\n                \"Resistor value must be between 100 and 1000 ohm.\",\n                \"Check the LED polarity.\",\n                \"Avoid direct connection from battery positive to ground.\"\n            ],\n            \"userGuide\": [\n                \"Connect battery positive to resistor, then to LED anode.\",\n                \"Connect LED cathode to ground.\"\n            ],\n            \"createdAt\": \"2025-10-04T09:05:13.861Z\",\n            \"updatedAt\": \"2025-10-04T09:05:13.861Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Submit Puzzle",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "puzzleId",
+									"value": "puzzle-001",
+									"type": "text"
+								},
+								{
+									"key": "circuitFile",
+									"type": "file",
+									"src": "postman-cloud:///1f0a1030-228f-4da0-adc8-27859fe4928d"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/circuit/upload",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"circuit",
+								"upload"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Submit Puzzle",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "puzzleId",
+											"value": "puzzle-001",
+											"type": "text"
+										},
+										{
+											"key": "circuitFile",
+											"type": "file",
+											"src": "postman-cloud:///1f0a10ae-443f-4850-a457-a07f305b5a3d"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/circuit/upload",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"circuit",
+										"upload"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "92"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 Oct 2025 15:45:09 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1759593517"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "149"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"95-r4BFS0cuAuhvk9QcwkTc97QUfI4\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Puzzle solved successfully!\",\n    \"meta\": null,\n    \"data\": {\n        \"success\": true,\n        \"message\": \"Puzzle solved successfully!\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Hint",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "puzzleId",
+									"value": "puzzle-001",
+									"type": "text"
+								},
+								{
+									"key": "circuitFile",
+									"type": "file",
+									"src": "postman-cloud:///1f0a1030-228f-4da0-adc8-27859fe4928d"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/circuit/hint",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"circuit",
+								"hint"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Hint",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "puzzleId",
+											"value": "puzzle-002",
+											"type": "text"
+										},
+										{
+											"key": "circuitFile",
+											"type": "file",
+											"src": "postman-cloud:///1f0a1397-ace6-45c0-b621-982c66417c0e"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/circuit/hint",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"circuit",
+										"hint"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "90"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 Oct 2025 15:48:05 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1759593517"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "205"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"cd-OXT9icjX5RUIyQDWB6vb1SSoaWE\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Hint retrieved successfully\",\n    \"meta\": null,\n    \"data\": {\n        \"hint\": \"Ensure your LED is connected in a continuous path between the battery's positive terminal and ground.\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Leaderboard",
+			"item": [
+				{
+					"name": "Get Leaderboard",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/leaderboard",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"leaderboard"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Leaderboard",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/leaderboard",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"leaderboard"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 Oct 2025 15:43:36 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1759593517"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "190"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"be-2NxusNI+z7GcWyC7xX5SF3WEIVw\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Leaderboard retrieved successfully\",\n    \"meta\": null,\n    \"data\": [\n        {\n            \"username\": \"rockie03\",\n            \"solved\": 4,\n            \"rank\": 1\n        },\n        {\n            \"username\": \"testuser1\",\n            \"solved\": 0,\n            \"rank\": 2\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Progress",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/leaderboard/progress",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"leaderboard",
+								"progress"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Progress",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/leaderboard/progress",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"leaderboard",
+										"progress"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "98"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 Oct 2025 15:43:59 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1759593517"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "907"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"38b-gAOlPRMgjqp0GIZXEBTQoLK3plg\""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"User progress retrieved successfully\",\n    \"meta\": null,\n    \"data\": {\n        \"solved\": 4,\n        \"attempts\": 19,\n        \"puzzles\": [\n            {\n                \"id\": \"puzzle-001\",\n                \"status\": \"attempted\"\n            },\n            {\n                \"id\": \"puzzle-001\",\n                \"status\": \"attempted\"\n            },\n            {\n                \"id\": \"puzzle-001\",\n                \"status\": \"attempted\"\n            },\n            {\n                \"id\": \"puzzle-001\",\n                \"status\": \"attempted\"\n            },\n            {\n                \"id\": \"puzzle-001\",\n                \"status\": \"attempted\"\n            },\n            {\n                \"id\": \"puzzle-001\",\n                \"status\": \"attempted\"\n            },\n            {\n                \"id\": \"puzzle-001\",\n                \"status\": \"attempted\"\n            },\n            {\n                \"id\": \"puzzle-001\",\n                \"status\": \"attempted\"\n            },\n            {\n                \"id\": \"puzzle-001\",\n                \"status\": \"solved\"\n            },\n            {\n                \"id\": \"puzzle-001\",\n                \"status\": \"solved\"\n            },\n            {\n                \"id\": \"puzzle-001\",\n                \"status\": \"attempted\"\n            },\n            {\n                \"id\": \"puzzle-001\",\n                \"status\": \"attempted\"\n            },\n            {\n                \"id\": \"puzzle-001\",\n                \"status\": \"solved\"\n            },\n            {\n                \"id\": \"puzzle-001\",\n                \"status\": \"attempted\"\n            },\n            {\n                \"id\": \"puzzle-001\",\n                \"status\": \"attempted\"\n            },\n            {\n                \"id\": \"puzzle-001\",\n                \"status\": \"solved\"\n            },\n            {\n                \"id\": \"puzzle-001\",\n                \"status\": \"attempted\"\n            },\n            {\n                \"id\": \"puzzle-001\",\n                \"status\": \"attempted\"\n            },\n            {\n                \"id\": \"puzzle-001\",\n                \"status\": \"attempted\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

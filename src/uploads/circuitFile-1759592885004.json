@@ -1,0 +1,12 @@
+{
+  "puzzleId": "puzzle-001",
+  "components": [
+    { "id": "battery1", "type": "battery", "properties": { "voltage": 5, "terminal1": "positive", "terminal2": "negative" } },
+    {"id": "led1", "type": "led", "properties": { "terminal1": "anode", "terminal2": "cathode" } },
+    { "id": "ground1", "type": "ground", "properties": { "terminal1": "gnd" } }
+  ],
+  "connections": [
+    { "from": "battery1:positive", "to": "ground1:gnd" },
+    { "from": "battery1:negative", "to": "ground1:gnd" }
+  ]
+}

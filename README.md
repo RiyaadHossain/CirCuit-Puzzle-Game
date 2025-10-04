@@ -119,6 +119,8 @@ circuit-puzzle-backend/
 - **Test Endpoints:**  Jest
 - **Security:** Helmet, MongoSanitize, CORS, Rate Limiter, Secure Cookies
 
+**🚀 Live URL :** *https://circuit-puzzle-game-backend.onrender.com/*
+
 ---
 
 ## ⚙️ Installation & Setup

@@ -10,7 +10,7 @@ const applySecurityMiddlewares = (app: express.Application) => {
   app.use(helmet());
 
   // 2. Prevent NoSQL injection
-  app.use(mongoSanitize());
+  // app.use(mongoSanitize()); // Commented out because not compatible with express v5 yet -> causing issues in production
 
   // 3. Enable CORS (update origin with your frontend URL)
   app.use(

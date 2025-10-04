@@ -1,0 +1,37 @@
+{
+  "puzzleId": "puzzle-001",
+  "components": [
+    {
+      "id": "comp1",
+      "type": "battery",
+      "properties": {
+        "voltage": 5,
+        "terminal1": "positive",
+        "terminal2": "negative"
+      }
+    },
+    {
+      "id": "comp2",
+      "type": "resistor",
+      "properties": {
+        "ohm": 220,
+        "terminal1": "in",
+        "terminal2": "out"
+      }
+    },
+    {
+      "id": "comp3",
+      "type": "led",
+      "properties": {
+        "forwardVoltage": 2,
+        "terminal1": "anode",
+        "terminal2": "cathode"
+      }
+    }
+  ],
+  "connections": [
+    { "from": "comp1:positive", "to": "comp2:in" },
+    { "from": "comp2:out", "to": "comp3:anode" },
+    { "from": "comp3:cathode", "to": "comp1:negative" }
+  ]
+}

@@ -5,6 +5,6 @@ export interface IUser {
   password: string; // hashed password
   createdAt?: Date;
   updatedAt?: Date;
-  solvedPuzzles?: number; // number of puzzles solved
-  attempts?: number; // total attempts made
+  solvedPuzzles: number; // number of puzzles solved
+  attempts: number; // total attempts made
 }

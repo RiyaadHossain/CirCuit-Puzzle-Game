@@ -10,7 +10,15 @@ const getProgress = async (userId: string) => {
     throw new APIError("User not found", httpStatus.NOT_FOUND);
   }
 
-  const puzzleAttempts = await PuzzleAttempt.find({ userId: userId }).lean();
+  let puzzleAttempts: any = await PuzzleAttempt.find({ userId: userId }).populate('puzzleId').lean();
+
+  // Organize attempts data
+  puzzleAttempts = puzzleAttempts.map((attempt: any) => ({
+    puzzleId: attempt.puzzleId._id, 
+    puzzle: attempt.puzzleId, 
+    attemptAt: attempt.attemptAt,
+    status: attempt.status,
+  }));
 
   const progressData = {
     solved: user.solvedPuzzles,

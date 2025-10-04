@@ -34,12 +34,8 @@ const login = async (loginData: any) => {
   const { username, password } = loginData; // username can be username or email
 
   // Find user by username or email
-  const user = await User.findOne({
-    username,
-  });
-  if (!user) {
-    throw new APIError("Invalid credentials", httpStatus.BAD_REQUEST);
-  }
+  const user = await User.findOne({ username });
+  if (!user) throw new APIError("Invalid credentials", httpStatus.UNAUTHORIZED);
 
   // Verify password
   const isMatch = await argon2.verify(user.password, password);

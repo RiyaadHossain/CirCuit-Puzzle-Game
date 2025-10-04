@@ -1,18 +1,35 @@
 import { COMPONENT_TYPE } from "@/enums/game.enums";
 import { CircuitSubmission, IComponent } from "../game.interface";
 
+// Helper to add bidirectional link
+function link(graph: Record<string, string[]>, a: string, b: string) {
+  if (!graph[a]) graph[a] = [];
+  if (!graph[b]) graph[b] = [];
+  graph[a].push(b);
+}
+
 export function buildGraph(submission: CircuitSubmission) {
   const graph: Record<string, string[]> = {};
 
+  // Add user-defined connections
   submission.connections.forEach((conn) => {
     if (!graph[conn.from]) graph[conn.from] = [];
     if (!graph[conn.to]) graph[conn.to] = [];
     graph[conn.from].push(conn.to);
-    graph[conn.to].push(conn.from);
   });
+
+  // Add default internal connections based on component type
+  for (const comp of submission.components) {
+    switch (comp.type) {
+      case COMPONENT_TYPE.RESISTOR:
+        link(graph, `${comp.id}:in`, `${comp.id}:out`);
+        break;
+    }
+  }
 
   return graph;
 }
+
 
 export function hasPath(
   graph: Record<string, string[]>,
@@ -49,6 +66,7 @@ export function universalElectricalChecks(
   graph: Record<string, string[]>,
   errors: string[]
 ) {
+
   const battery = submission.components.find(
     (c) => c.type === COMPONENT_TYPE.BATTERY
   );

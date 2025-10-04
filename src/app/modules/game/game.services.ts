@@ -1,5 +1,5 @@
 import path from "path";
-import { Puzzle, PuzzleAttempt } from "./game.model";
+import { Puzzle, PuzzleAttempt, Component, Rules } from "./game.model";
 import fs from "fs";
 import {
   canRequestHint,
@@ -101,8 +101,61 @@ const getHint = async (userId: string, puzzleId: string, filePath: string) => {
   return { hint: llmHinsts.hint };
 };
 
+/**
+ * Adds a new puzzle to the database.
+ * @param puzzleData - Object containing puzzle fields as per puzzleSchema.
+ *   {
+ *     puzzleId: string,
+ *     title: string,
+ *     description: string,
+ *     components: Array<{ id, type, minCount, maxCount, properties }>,
+ *     difficulty?: string,
+ *     rules?: { resistorValue?: number, maxComponents?: number },
+ *     hints?: string[],
+ *     userGuide?: string[]
+ *   }
+ */
+const addPuzzle = async (puzzleData: any) => {
+  // Create components if provided as objects
+  let componentIds = [];
+  if (Array.isArray(puzzleData.components)) {
+    const createdComponents = await Promise.all(
+      puzzleData.components.map(async (comp: any) => {
+        // Check if component with same id exists
+        let existing = await Component.findOne({ id: comp.id });
+        if (existing) return existing._id;
+        const created = await Component.create(comp);
+        return created._id;
+      })
+    );
+    componentIds = createdComponents;
+  }
+
+  // Create rules if provided
+  let rulesId = undefined;
+  if (puzzleData.rules) {
+    const createdRules = await Rules.create(puzzleData.rules);
+    rulesId = createdRules._id;
+  }
+
+  // Create the puzzle
+  const puzzle = await Puzzle.create({
+    puzzleId: puzzleData.puzzleId,
+    title: puzzleData.title,
+    description: puzzleData.description,
+    components: componentIds,
+    difficulty: puzzleData.difficulty,
+    rules: rulesId,
+    hints: puzzleData.hints,
+    userGuide: puzzleData.userGuide,
+  });
+
+  return puzzle;
+};
+
 export const GameService = {
   getAllPuzzles,
   submitPuzzle,
   getHint,
+  addPuzzle, 
 };

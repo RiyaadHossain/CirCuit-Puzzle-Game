@@ -3,6 +3,7 @@ import validateRequest from "@/app/middlewares/req-validator";
 import { AuthControllers } from "./auth.controllers";
 import { AuthValidators } from "./auth.validators";
 import auth from "@/app/middlewares/auth.middleware";
+import { loginLimiter } from "@/config/rate-limit";
 
 const router = Router();
 

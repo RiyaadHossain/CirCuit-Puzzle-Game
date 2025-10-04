@@ -9,10 +9,10 @@ router.get("/puzzles", auth(), GameControllers.getAllPuzzles);
 router.post(
   "/upload",
   auth(),
-  upload.single("curcuitFile"), // multipart/form-data (curcuitFile, puzzleId)
+  upload.single("circuitFile"), // multipart/form-data (circuitFile, puzzleId)
   GameControllers.submitPuzzle
 );
 
-router.post("/hint", auth(), upload.single("curcuitFile"), GameControllers.getHint)
+router.post("/hint", auth(), upload.single("circuitFile"), GameControllers.getHint)
 
 export default router;

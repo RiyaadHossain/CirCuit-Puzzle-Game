@@ -9,7 +9,7 @@ import leaderboardRoutes from "../modules/leaderboard/lb.routes";
 const moduleRoutes = [
   { path: "/auth", route: authRoutes },
   { path: "/user", route: userRoutes },
-  { path: "/curcuit", route: gameRoutes },
+  { path: "/circuit", route: gameRoutes },
   { path: "/leaderboard", route: leaderboardRoutes },
 ];
 

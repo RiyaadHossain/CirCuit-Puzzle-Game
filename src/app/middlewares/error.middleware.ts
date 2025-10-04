@@ -1,6 +1,6 @@
 import type { Request, Response, NextFunction } from "express";
 import httpStatus from "http-status";
-import dotenv from "@config/index.js";
+import dotenv from "@/config/index";
 import { ZodError } from "zod";
 import mongoose from "mongoose";
 import { IGenericErrorMessage } from "@/interfaces/error";

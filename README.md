@@ -80,13 +80,16 @@ circuit-puzzle-backend/
 │   │   │   │   ├── circuit.model.ts
 │   │   │   │   ├── circuit.routes.ts
 │   │   │   │   └── circuit.service.ts
+│   │   │   │   └── ...
 │   │   │   └── leaderboard/
-│   │   │       ├── leaderboard.controller.ts
-│   │   │       ├── leaderboard.routes.ts
-│   │   │       └── leaderboard.service.ts
+│   │   │   │   ├── leaderboard.controller.ts
+│   │   │   │   ├── leaderboard.routes.ts
+│   │   │   │   └── leaderboard.service.ts
+│   │   │   │   └── ...
 │   │   ├── middleware/      # Auth, error handling, validation
 │   │   │   ├── auth.middleware.ts
 │   │   │   └── error.middleware.ts
+│   │   │   └── ...
 │   │   └── routes/          # Route aggregator files
 │   │       └── index.ts
 │   ├── constants/           # App constants (status codes, enums, etc.)
@@ -101,6 +104,7 @@ circuit-puzzle-backend/
 ├── package.json
 ├── tsconfig.json
 └── README.md
+└── ...
 ```
 
 ## 🛠️ Tech Stack
@@ -127,7 +131,7 @@ cd circuit-puzzle-backend
 ```
 
 ### 2️⃣ Create a `.env` file and provide the values
-```json
+```bash
 # Logging
 LOG_LEVEL = "info"
 

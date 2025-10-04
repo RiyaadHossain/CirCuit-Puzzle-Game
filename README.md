@@ -4,6 +4,28 @@ A **Node.js + TypeScript + Express + MongoDB** backend for the **Circuit Puzzle 
 
 ---
 
+## 📖 Table of Contents
+
+- [🧩 How the Application Works](#🧩-how-the-application-works)
+- [🚀 Features](#🚀-features)
+- [📂 Project Structure](#📂-project-structure)
+- [🛠️ Tech Stack](#🛠️-tech-stack)
+- [⚙️ Installation & Setup](#⚙️-installation--setup)
+  - [1️⃣ Clone the repo](#1️⃣-clone-the-repo)
+  - [2️⃣ Create a `.env` file and provide the values](#2️⃣-create-a-env-file-and-provide-the-values)
+  - [3️⃣ Install and Run the server](#3️⃣-install-and-run-the-server)
+- [🔗 API Endpoints](#🔗-api-endpoints)
+  - [🔑 Authentication Module](#🔑-authentication-module)
+  - [🎮 Circuit Module](#🎮-circuit-module)
+  - [🏆 Leaderboard Module](#🏆-leaderboard-module)
+- [💡 Configuration & Limits](#💡-configuration--limits)
+  - [🔑 Authentication & JWT](#🔑-authentication--jwt)
+  - [📝 Maximum Hints](#📝-maximum-hints)
+  - [⏱️ Rate Limiting](#⏱️-rate-limiting)
+  - [🛡️ Security Middlewares](#🛡️-security-middlewares)
+  - [⚠️ Assumptions](#⚠️-assumptions)
+- [📋 Requirements Implementation Status](#📋-requirements-implementation-status)
+
 ## 🧩 How the Application Works
 
 The **Circuit Puzzle Game Backend** powers an interactive game where users solve circuit puzzles by designing and submitting circuits.
@@ -145,14 +167,14 @@ npm start # to run the build file
 ```
 > Server will start at http://localhost:5000
 
-# 🔗 API Endpoints
+## 🔗 API Endpoints
 
 All endpoints are prefixed with `/api/v1` |
 🔒 Protected routes require `Authorization: Bearer <token>`
 
 ---
 
-## 🔑 Authentication Module  
+### 🔑 Authentication Module  
 Handles user registration, login, and secure session management.
 
 - `POST /auth/register` – Register a new user  
@@ -161,7 +183,7 @@ Handles user registration, login, and secure session management.
 
 ---
 
-## 🎮 Circuit Module  
+### 🎮 Circuit Module  
 Manages puzzles, uploads user circuit solutions, and provides AI-generated hints.
 
 - 🔒 `GET /circuits/puzzles` – Get all available puzzles  
@@ -170,7 +192,7 @@ Manages puzzles, uploads user circuit solutions, and provides AI-generated hints
 
 ---
 
-## 🏆 Leaderboard Module  
+### 🏆 Leaderboard Module  
 Tracks user progress and displays top solvers on the leaderboard.
 
 - 🔒 `GET /leaderboard` – Get top users sorted by solved puzzles  
@@ -216,3 +238,27 @@ Tracks user progress and displays top solvers on the leaderboard.
 - All circuit submissions are **JSON files** validated using Zod.  
 - JWT access token must be included in the `Authorization` header for protected routes.  
 - AI hints are **rate-limited** per puzzle and cannot exceed the configured `MAX_HINTS`.
+
+
+## 📋 Requirements Implementation Status
+
+| Requirement | Implemented |
+|-------------|------------|
+| **Language:** TypeScript | ✅ |
+| **Core Framework:** Node.js (v22+) with Express.js | ✅ |
+| **Database:** MongoDB (via Mongoose) | ✅ |
+| **Authentication:** JWT-based authentication | ✅ |
+| **File Upload:** Multer for JSON uploads | ✅ |
+| **AI Integration:** LLM (e.g., OpenAI / Gemini) for hints | ✅ Used Gemini |
+| **Validation Logic:** Custom circuit JSON validation | ✅ |
+| **Other Libraries:** jsonwebtoken, argon2, axios/node-fetch, zod | ✅ |
+| **No Frontend & Include Postman:** APIs tested with Postman, response examples included | ✅ (Postman API collection provided with requests' response ) |
+| **Environment:** Sensitive data in `.env` | ✅ |
+| **Testing:** Basic unit tests with Jest (5-10 tests) | ✅ |
+| **Documentation:** README with setup, endpoints, assumptions | ✅ |
+| **Error Handling:** Proper error responses (400, 401, etc.) | ✅ (Centerilized Error Handler) |
+| **Security Best Practices:** Secure file uploads, auth checks, rate limiting, Helmet headers | ✅ |
+| **Correctness:** Validation logic accurate, APIs work as described | ✅ |
+| **Code Quality:** Clean, modular, commented | ✅ Implemented Modular Architecture |
+| **Efficiency:** Validation O(N) complexity for components/connections | ✅ |
+| **Innovation:** Extras like rate limiting hints & advanced graph validation | ✅ Rate Limit, ❌ Just Implemented DFS for graph traversal |

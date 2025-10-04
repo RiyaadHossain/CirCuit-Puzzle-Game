@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "tsx watch -r tsconfig-paths/register src/server.ts",
     "build": "tsc && tsc-alias",
-    "start": "tsc && tsc-alis && node dist/server.js",
+    "start": "tsc && tsc-alias && node dist/server.js",
     "lint": "eslint 'src/**/*.{ts,js}'",
     "test": "jest"
   },

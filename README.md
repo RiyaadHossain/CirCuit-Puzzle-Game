@@ -165,7 +165,7 @@ MAX_HINTS  = "max hints"
 ```bash
 npm install
 npm run dev # to run in dev env
-npm build # to build the server code
+npm run build # to build the server code
 npm test # to run jest test cases
 npm start # to run the build file
 ```
@@ -175,6 +175,8 @@ npm start # to run the build file
 
 All endpoints are prefixed with `/api/v1` |
 🔒 Protected routes require `Authorization: Bearer <token>`
+
+> Checkout the API collection with full req body and response in the `postman-api-collection.json`
 
 ---
 
@@ -193,6 +195,16 @@ Manages puzzles, uploads user circuit solutions, and provides AI-generated hints
 - 🔒 `GET /circuits/puzzles` – Get all available puzzles  
 - 🔒 `POST /circuits/upload` – Upload a circuit solution for validation  
 - 🔒 `POST /circuits/hint` – Get AI-generated hint for an invalid circuit  
+
+> **Note on File Uploads Routes:**  
+> The backend server is deployed on **Vercel**, which is a serverless hosting platform.  
+> Serverless environments **do not allow writing files to disk**, so the file upload routes (`/circuits/upload` and `/circuits/hint`) cannot fully function on the deployed server.  
+> To properly test these endpoints, you should either:  
+> 1. Run the server **locally**, or  
+> 2. Deploy it to a **stateful server** where file writing is permitted.  
+> 
+> This ensures that JSON circuit uploads and AI hint generation work as intended.
+
 
 ---
 
@@ -266,3 +278,4 @@ Tracks user progress and displays top solvers on the leaderboard.
 | **Code Quality:** Clean, modular, commented | ✅ Implemented Modular Architecture |
 | **Efficiency:** Validation O(N) complexity for components/connections | ✅ |
 | **Innovation:** Extras like rate limiting hints & advanced graph validation | ✅ Rate Limit, ❌ Just Implemented DFS for graph traversal |
+
